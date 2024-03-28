@@ -44,7 +44,27 @@ class Policy(nn.Module):
         action_scores = self.affine2(x)
         return F.softmax(action_scores, dim=1)
 
-
+class StateValueNetwork(nn.Module):
+    
+    #Takes in state
+    def __init__(self, observation_space):
+        super(StateValueNetwork, self).__init__()
+        
+        self.input_layer = nn.Linear(observation_space, 128)
+        self.output_layer = nn.Linear(128, 1)
+        
+    def forward(self, x):
+        #input layer
+        x = self.input_layer(x)
+        
+        #activiation relu
+        x = F.relu(x)
+        
+        #get state value
+        state_value = self.output_layer(x)
+        
+        return state_value
+    
 policy = Policy()
 optimizer = optim.Adam(policy.parameters(), lr=1e-2)
 eps = np.finfo(np.float32).eps.item()
