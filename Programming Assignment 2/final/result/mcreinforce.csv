@@ -1,0 +1,13 @@
+environment,type,average_reward,hidden_size,reward_array
+CartPole,wobaseline,22.7792,32,
+CartPole,wbaseline,22.2816,32,
+CartPole,wobaseline,22.7216,48,
+CartPole,wbaseline,23.0584,48,
+CartPole,wobaseline,21.982,64,
+CartPole,wbaseline,22.2726,64,
+Acrobot,wobaseline,-496.2846,32,
+Acrobot,wbaseline,-499.2966,32,
+Acrobot,wobaseline,-497.7018,48,
+Acrobot,wbaseline,-492.9984,48,
+Acrobot,wobaseline,-490.1348,64,
+Acrobot,wbaseline,-484.1086,64,
